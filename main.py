@@ -4,7 +4,7 @@ from send_email import send_email
 
 API_KEY = "d7bf198e298449c287b65b182fcd58dc"
 
-url = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={API_KEY}"
+url = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={API_KEY}&language=en"
 
 # Make Requests
 request = re.get(url)
