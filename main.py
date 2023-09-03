@@ -15,10 +15,13 @@ content = request.json()
 # Access the article titles and description
 data = ""
 for article in content["articles"]:
-    if article["title"] is not None and article["url"] is not None and article["description"] is not None :
-        data += article["title"] + "\n" + article["description"] + "\n" + article["url"] + 2*"\n"
+    if article["title"] is not None \
+            and article["url"] is not None \
+            and article["description"] is not None \
+            and article["url"] != "https://removed.com":
+        data = data + article["title"] + "\n" + article["description"] + "\n" + article["url"] + 2*"\n"
 
-
+data = "Subject: Top 20 News: India" + "\n" + data
 send_email(data.encode('utf-8'))
 
 
